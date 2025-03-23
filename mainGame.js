@@ -471,127 +471,64 @@ const personalities = {
 
 let currentState = 1;
 
-// Preload all images
-function preloadImages() {
-    // Create an object to store all the image paths from gameData
-    const imagePaths = new Set();
-    
-    // Extract all image paths from gameData
-    for (const state in gameData) {
-        if (gameData[state].image) {
-            imagePaths.add(gameData[state].image);
-        }
-    }
-    
-    // Add the opening image
-    imagePaths.add("smaller_images/landmark_opening.png");
-    
-    // Preload each image
-    imagePaths.forEach(path => {
-        const img = new Image();
-        img.src = path;
-    });
-}
-
-// Call this function when the page loads
-window.addEventListener('load', preloadImages);
-
+// Simple renderState function
 function renderState(state) {
     console.log("Rendering state:", state);
     
+    // Get DOM elements
     const storyText = document.getElementById('story-text');
     const storyImage = document.getElementById('story-image');
     const choicesContainer = document.getElementById('choices');
     
-    // Create a loading state
+    // Clear previous choices
+    choicesContainer.innerHTML = '';
+    
+    // Set text
     storyText.textContent = gameData[state].text;
-    choicesContainer.innerHTML = ''; // Clear previous choices
     
-    // Create a promise for the image loading
-    const loadImage = new Promise((resolve) => {
-        if (gameData[state].image) {
-            const img = new Image();
-            img.onload = () => {
-                storyImage.src = img.src;
-                resolve();
-            };
-            img.onerror = () => {
-                console.warn("Failed to load image:", gameData[state].image);
-                storyImage.src = "smaller_images/placeholder.png";
-                resolve();
-            };
-            img.src = gameData[state].image;
-        } else {
-            storyImage.src = "smaller_images/placeholder.png";
-            resolve();
-        }
-    });
+    // Set image
+    storyImage.src = gameData[state].image;
     
-    // Create buttons after image is loaded
-    loadImage.then(() => {
-        // Now create all the buttons
-        for (const [choice, info] of Object.entries(gameData[state].choices)) {
-            const button = document.createElement('button');
-            button.textContent = choice;
-            button.className = 'choice-button';
-            let nextState = info[0];
-            let selectedPersonalities = info[1];
-            
-            button.onclick = function() {
-                console.log("Clicked to go to state", nextState);
-                changeState(nextState, selectedPersonalities);
-            };
-            
-            choicesContainer.appendChild(button);
-        }
-    });
+    // Create buttons
+    for (const [choice, info] of Object.entries(gameData[state].choices)) {
+        const button = document.createElement('button');
+        button.textContent = choice;
+        button.className = 'choice-button';
+        let nextState = info[0];
+        let selectedPersonalities = info[1];
+        
+        button.onclick = function() {
+            changeState(nextState, selectedPersonalities);
+        };
+        
+        choicesContainer.appendChild(button);
+    }
 }
 
+// Simple changeState function
 function changeState(newState, selectedPersonalities) { 
     // Update personality scores
     selectedPersonalities.forEach(personality => {
         personalities[personality]++;
     });
 
-    // Show loading state
-    const loadingIndicator = document.getElementById('loading-indicator');
-    const choicesContainer = document.getElementById('choices');
-    const storyText = document.getElementById('story-text');
-    
-    // Clear current choices and fade image
-    choicesContainer.innerHTML = '';
-    document.getElementById('story-image').classList.add('image-fade');
-    
-    // Show loading indicator if we're not ending the game
-    if (newState !== 0) {
-        loadingIndicator.style.display = 'flex';
-    }
-    
-    // Set a tiny timeout to ensure the UI updates before loading the next state
-    setTimeout(() => {
-        currentState = newState;
+    // Update current state
+    currentState = newState;
 
-        if (currentState === 0) {
-            loadingIndicator.style.display = 'none';
-            revealMostSelectedCreature();
-        } else {
-            // Render next state after a short delay to show the loading effect
-            renderState(currentState);
-            
-            // Hide loading indicator after rendering
-            setTimeout(() => {
-                loadingIndicator.style.display = 'none';
-                document.getElementById('story-image').classList.remove('image-fade');
-                document.getElementById('story-image').classList.add('image-show');
-            }, 300); // Adjust timing as needed
-        }
-    }, 100);
+    // Check if we should show results or continue
+    if (currentState === 0) {
+        revealMostSelectedCreature();
+    } else {
+        renderState(currentState);
+    }
 }
 
+// Show final result
 function revealMostSelectedCreature() {
     let maxCount = 0;
     let maxCreature = '';
 
+    // Find the most selected personality
     for (const [creature, count] of Object.entries(personalities)) {
         if (count > maxCount) {
             maxCount = count;
@@ -599,43 +536,39 @@ function revealMostSelectedCreature() {
         }
     }
 
+    // Get DOM elements
     const storyImage = document.getElementById('story-image');
     const text = document.getElementById('story-text');
     const choicesContainer = document.getElementById('choices');
-    const creatureImagePath = `smaller_images/id_cards/${maxCreature}.png`;
-
-    // Preload the image
-    const img = new Image();
-    img.src = creatureImagePath;
-    img.className = 'responsive-image'; 
-
-    // Once the image is loaded, update the DOM
-    img.onload = () => {
-        storyImage.style.display = 'none';
-        choicesContainer.style.display = 'none';
     
-        text.textContent = "Drumroll... here is your Tiny ID!";
+    // Hide elements
+    storyImage.style.display = 'none';
+    choicesContainer.style.display = 'none';
+    
+    // Show result
+    text.textContent = "Drumroll... here is your Tiny ID!";
+    
+    // Create and append image
+    const img = new Image();
+    img.src = `smaller_images/id_cards/${maxCreature}.png`;
+    img.className = 'responsive-image';
+    img.onload = function() {
         text.appendChild(img);
     };
 }
 
+// Start the game when the button is clicked
 function startGame() {
+    // Hide intro elements
     document.querySelector('.title').style.display = 'none';
     document.getElementById('homescreen').style.display = 'none';
     document.querySelector('.start-button').style.display = 'none';
     
     // Show game container
-    const gameContainer = document.getElementById('game-container');
-    gameContainer.style.display = 'flex';
-    gameContainer.style.flexDirection = 'column';
+    document.getElementById('game-container').style.display = 'block';
     
+    // Start at the first state
     renderState(currentState);
-    
-    // Scroll to top
-    window.scrollTo(0, 0);
 }
 
-window.onload = () => {
-    preloadImages(); // Make sure images are preloaded
-    // Do not call renderState here, as it will render the game before user clicks "Enter the world"
-};
+// Don't do anything on window load - wait for user to click start
