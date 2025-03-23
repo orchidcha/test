@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Landmark Are You?</title>
+    <link rel="icon" href="smaller_images/gator.png" type="image/png">
     <style>
         @font-face {
             font-family: 'PixelFont';
@@ -24,7 +25,8 @@
         .container {
             width: 90%;
             max-width: 500px;
-            min-height: 80vh;
+            min-height: 85vh;
+            max-height: 95vh;
             padding: 15px;
             border-radius: 10px;
             background: #3f0d63;
@@ -64,7 +66,11 @@
         .game-container {
             display: none;
             width: 100%;
-            overflow: auto;
+            margin-top: 0;
+            overflow-y: auto;
+            height: auto;
+            flex-grow: 1;
+            padding-top: 10px;
         }
  
         .choices {
@@ -74,6 +80,7 @@
             gap: 10px;
             margin-top: 20px;
             width: 100%;
+            padding-bottom: 15px;
         }
 
         .choice-button {
@@ -102,14 +109,18 @@
         
         .story-text {
             font-size: 18px;
-            margin-bottom: 15px;
+            margin: 10px 0 15px 0;
             color: #e2c6ff;
             line-height: 1.4;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            padding: 0 5px;
         }
 
         .image-container {
-            max-width: 80%;
-            margin: 10px auto;
+            max-width: 70%;
+            margin: 5px auto 10px auto;
         }
 
         .image-container img {
@@ -154,6 +165,18 @@
                 font-size: 16px;
             }
         }
+
+        /* Add this media query for larger screens */
+        @media (min-height: 700px) {
+            .container {
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+            
+            .game-container {
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -172,6 +195,27 @@
     </div>
     
     <script src="mainGame.js"></script>
+    
+    <script>
+        // Add this improved startGame function
+        function startGame() {
+            document.querySelector('.title').style.display = 'none';
+            document.getElementById('homescreen').style.display = 'none';
+            document.querySelector('.start-button').style.display = 'none';
+            
+            // Show game container
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.style.display = 'flex';
+            gameContainer.style.flexDirection = 'column';
+            
+            if (typeof renderState === 'function') {
+                renderState(currentState);
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
     
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
