@@ -456,7 +456,20 @@ const gameData = {
     }
 };
 
-// Add this to the top of your mainGame.js file, after the gameData declaration
+const personalities = { 
+    "iPad Kid Tiny": 0,      // The Enthusiast
+    "Ghost Tiny": 0,         // The Analyst
+    "Excited Tiny": 0,       // The Dreamer
+    "Tired Tiny": 0,     // The Adventurer
+    "Shocked Tiny": 0,        // The Steady
+    "Side Eye Tiny": 0,         // The Observer
+    "I've Lost It Tiny": 0,   // The Harmonizer
+    "Professional Tiny": 0,         // The Bold
+    "Polite Tiny": 0, // The Solitary
+    "Megamind Tiny": 0         // The Cautious
+};
+
+let currentState = 1;
 
 // Preload all images
 function preloadImages() {
@@ -483,7 +496,6 @@ function preloadImages() {
 // Call this function when the page loads
 window.addEventListener('load', preloadImages);
 
-// Modify the renderState function to handle image loading better
 function renderState(state) {
     console.log("Rendering state:", state);
     
@@ -535,81 +547,45 @@ function renderState(state) {
     });
 }
 
-
-const personalities = { 
-    "iPad Kid Tiny": 0,      // The Enthusiast
-    "Ghost Tiny": 0,         // The Analyst
-    "Excited Tiny": 0,       // The Dreamer
-    "Tired Tiny": 0,     // The Adventurer
-    "Shocked Tiny": 0,        // The Steady
-    "Side Eye Tiny": 0,         // The Observer
-    "I've Lost It Tiny": 0,   // The Harmonizer
-    "Professional Tiny": 0,         // The Bold
-    "Polite Tiny": 0, // The Solitary
-    "Megamind Tiny": 0         // The Cautious
-};
-
-let currentState = 1;
-
-function renderState(state) {
-    console.log("Rendering state:", state);
-    
-    const storyText = document.getElementById('story-text');
-    const storyImage = document.getElementById('story-image');
-    const choicesContainer = document.getElementById('choices');
-
-    // Set text content immediately
-    storyText.textContent = gameData[state].text;
-    choicesContainer.innerHTML = '';
-    
-    // Create buttons regardless of image loading
-    for (const [choice, info] of Object.entries(gameData[state].choices)) {
-        const button = document.createElement('button');
-        button.textContent = choice;
-        button.className = 'choice-button';
-        let nextState = info[0];
-        let selectedPersonalities = info[1];
-        
-        button.onclick = function() {
-            console.log("Clicked to go to state", nextState);
-            changeState(nextState, selectedPersonalities);
-        };
-        
-        choicesContainer.appendChild(button);
-    }
-
-    // Load image separately
-    if (gameData[state].image) {
-        const img = new Image();
-        img.src = gameData[state].image;
-        
-        img.onload = function() {
-            storyImage.src = img.src;
-        };
-        
-        img.onerror = function() {
-            console.warn("Failed to load image:", gameData[state].image);
-            storyImage.src = "smaller_images/placeholder.png";
-        };
-    } else {
-        storyImage.src = "smaller_images/placeholder.png";
-    }
-}
-
-
 function changeState(newState, selectedPersonalities) { 
-    // console.log(personalities); 
+    // Update personality scores
     selectedPersonalities.forEach(personality => {
         personalities[personality]++;
     });
 
-    currentState = newState;
-
-    if (currentState === 0) {
-        revealMostSelectedCreature();
-    } else {
-        renderState(currentState);
+    // Show loading state
+    const loadingIndicator = document.getElementById('loading-indicator');
+    const choicesContainer = document.getElementById('choices');
+    const storyText = document.getElementById('story-text');
+    
+    // Clear current choices and fade image
+    choicesContainer.innerHTML = '';
+    document.getElementById('story-image').classList.add('image-fade');
+    
+    // Show loading indicator if we're not ending the game
+    if (newState !== 0) {
+        loadingIndicator.style.display = 'flex';
     }
+    
+    // Set a tiny timeout to ensure the UI updates before loading the next state
+    setTimeout(() => {
+        currentState = newState;
+
+        if (currentState === 0) {
+            loadingIndicator.style.display = 'none';
+            revealMostSelectedCreature();
+        } else {
+            // Render next state after a short delay to show the loading effect
+            renderState(currentState);
+            
+            // Hide loading indicator after rendering
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+                document.getElementById('story-image').classList.remove('image-fade');
+                document.getElementById('story-image').classList.add('image-show');
+            }, 300); // Adjust timing as needed
+        }
+    }, 100);
 }
 
 function revealMostSelectedCreature() {
@@ -640,9 +616,6 @@ function revealMostSelectedCreature() {
     
         text.textContent = "Drumroll... here is your Tiny ID!";
         text.appendChild(img);
-
-        // Remove the share button code completely
-        // The entire shareButton section has been removed
     };
 }
 
@@ -650,10 +623,19 @@ function startGame() {
     document.querySelector('.title').style.display = 'none';
     document.getElementById('homescreen').style.display = 'none';
     document.querySelector('.start-button').style.display = 'none';
-    document.getElementById('game-container').style.display = 'block';
+    
+    // Show game container
+    const gameContainer = document.getElementById('game-container');
+    gameContainer.style.display = 'flex';
+    gameContainer.style.flexDirection = 'column';
+    
     renderState(currentState);
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
 }
 
 window.onload = () => {
-    renderState(currentState);
-}
+    preloadImages(); // Make sure images are preloaded
+    // Do not call renderState here, as it will render the game before user clicks "Enter the world"
+};
