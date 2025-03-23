@@ -23,9 +23,9 @@ const gameData = {
         "text": "You've arrived at the small, riverside town! You love the small, cozy vibe of the town. What's the first thing you do?",
         "image": "smaller_images/small_town.png",
         "choices": {
-            "Head into the Cozy Corner Cafe to get a drink": [41, ["Polite Tiny", "Excited Tiny"]],
-            "Take a walk by Ravenshadow River": [41, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
-            "Go into the Lantern Light Library to read a book": [41, ["Megamind Tiny", "Professional Tiny"]],
+            "Head into the Woodstock Cafe to get a drink": [41, ["Polite Tiny", "Excited Tiny"]],
+            "Take a walk by Fort River": [41, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
+            "Go into the Grand Library to read a book": [41, ["Megamind Tiny", "Professional Tiny"]],
             "Find a room and take a nap in": [41, ["iPad Kid Tiny", "I've Lost It Tiny", "Shocked Tiny"]],
         }
     },
@@ -45,7 +45,7 @@ const gameData = {
         "choices": {
             "The dance team performing on the street!": [8, ["Excited Tiny", "iPad Kid Tiny", "Shocked Tiny"]],
             "The artist painting caricatures": [8, ["Megamind Tiny", "Professional Tiny", "Polite Tiny"]],
-            "The woman knitting her scarf by the river": [8, ["Tired Tiny", "Ghost Tiny"]],
+            "The woman sewing by the river": [8, ["Tired Tiny", "Ghost Tiny"]],
             "The dogs playing in the park": [8, ["I've Lost It Tiny", "Side Eye Tiny"]],
         }
     },
@@ -75,7 +75,7 @@ const gameData = {
         }
     },
     "55": {
-        "text": "You turn to run, but before you can take a single step, a powerful whirlwind surges around you. The ground vanishes beneath your feet as you're lifted into the air, spinning helplessly into the unknown.",
+        "text": "Right as you slow down, a powerful whirlwind surges around you. The ground vanishes beneath your feet as you're lifted into the air, spinning helplessly into the unknown.",
         "image": "smaller_images/whirlwind.png",
         "choices": {
             "Continue": [49, ["iPad Kid Tiny", "Excited Tiny", "Ghost Tiny", "Tired Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny", "Professional Tiny", "Polite Tiny", "Megamind Tiny"]]
@@ -98,7 +98,7 @@ const gameData = {
             "Take the bus back home": [43, ["Tired Tiny", "Polite Tiny", "Side Eye Tiny"]],
             "Stop at a cafe to unwind for a little bit": [43, ["iPad Kid Tiny", "Ghost Tiny"]],
             "Hang out with friends": [43, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
-            "I had activities right after school ended": [43, ["Professional Tiny", "Megamind Tiny"]]
+            "Stay after school for sports/theater/etc.": [43, ["Professional Tiny", "Megamind Tiny"]]
         }
     },
     "43": {
@@ -125,7 +125,7 @@ const gameData = {
         "choices": {
             "They were annoying me": [12, ["Side Eye Tiny", "Professional Tiny", "Megamind Tiny"]],
             "I was tired and over it": [12, ["Tired Tiny", "Ghost Tiny"]],
-            "I was pretending not to know them": [12, ["iPad Kid Tiny", "I've Lost It Tiny"]],
+            "I was pretending to not know them": [12, ["iPad Kid Tiny", "I've Lost It Tiny"]],
             "It is a Christmas song and I hate joy": [12, ["Excited Tiny", "Shocked Tiny", "Polite Tiny"]]
         }
     },
@@ -168,7 +168,7 @@ const gameData = {
         "image": "smaller_images/city.png",
         "choices": {
             "I'm headed straight for the ramen bar": [15, ["iPad Kid Tiny", "Excited Tiny", "Side Eye Tiny"]],
-            "Walk into one of the infinite museums": [15, ["Megamind Tiny", "Professional Tiny", "Polite Tiny"]],
+            "Walk into one of the art museums": [15, ["Megamind Tiny", "Professional Tiny", "Polite Tiny"]],
             "People watch on a bench with a drink and a book": [15, ["Ghost Tiny", "Tired Tiny"]],
             "Head into the nearest thrift store": [15, ["I've Lost It Tiny", "Shocked Tiny"]]
         }
@@ -179,21 +179,21 @@ const gameData = {
         "choices": {
             "Wander through the botanical gardens": [16, ["Tired Tiny", "Ghost Tiny", "Polite Tiny", "Megamind Tiny"]],
             "Check out the driving range": [16, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny"]],
-            "Walk toward the waterfront, watching boats drift along": [16, ["Professional Tiny", "I've Lost It Tiny", "Side Eye Tiny"]]
+            "Walk towards the little waterfall": [16, ["Professional Tiny", "I've Lost It Tiny", "Side Eye Tiny"]]
         }
     },
     "16": {
-        "text": "Before you can get on with your activity, a child runs up to you claiming that they can't find their mom. What do you do?",
+        "text": "As you're strolling, you see a zoo! What exhibit are you checking out?,
         "image": "smaller_images/mom_child.png",
         "choices": {
-            "You ask the child where they last saw their mom": [17, ["Ghost Tiny", "Tired Tiny", "I've Lost It Tiny"]],
-            "Give them your phone for them to call their mom": [17, ["iPad Kid Tiny", "Side Eye Tiny"]],
-            "Call the park security to tell them about the lost child": [17, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "You take the child's hand and start looking around": [17, ["Excited Tiny", "Shocked Tiny"]]
+            "The pandas ": [17, ["Ghost Tiny", "Tired Tiny", "I've Lost It Tiny"]],
+            "The penguin cove": [17, ["iPad Kid Tiny", "Side Eye Tiny"]],
+            "The dinosaur fossils": [17, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
+            "The butterfly dome": [17, ["Excited Tiny", "Shocked Tiny"]]
         }
     },
     "17": {
-        "text": "After helping the child, you decide to head to a cafe in the park -- that took a while and you're tired! What do you asked the barista to get you?",
+        "text": "After going through the zoo, you decide to head to a cafe in the park. What do you ask the barista?",
         "image": "smaller_images/cafe.png",
         "choices": {
             "Ask them if they have lattes": [18, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
