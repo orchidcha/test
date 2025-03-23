@@ -187,7 +187,7 @@ const gameData = {
     },
     "16": {
         "text": "As you're strolling, you see a zoo! What exhibit are you checking out?",
-        "image": "smaller_images/mom_child.png",
+        "image": "smaller_images/animals.png",
         "choices": {
             "The pandas ": [17, ["Ghost Tiny", "Tired Tiny", "I've Lost It Tiny"]],
             "The penguin cove": [17, ["iPad Kid Tiny", "Side Eye Tiny"]],
