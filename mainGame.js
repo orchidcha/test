@@ -617,7 +617,7 @@ function revealMostSelectedCreature() {
         storyImage.style.display = 'none';
         choicesContainer.style.display = 'none';
     
-        text.textContent = "Drumroll... here is your Tiny ID!";
+        text.textContent = "Drumroll... here is your Tiny ID! Oh how I love this holiday...";
         text.appendChild(img);
     };
 }
