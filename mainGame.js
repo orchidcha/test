@@ -96,8 +96,8 @@ const gameData = {
         "image": "smaller_images/school_bus.png",
         "choices": {
             "Take the bus back home": [43, ["Tired Tiny", "Polite Tiny", "Side Eye Tiny"]],
-            "Stop at a cafe to unwind for a little bit": [43, ["iPad Kid Tiny", "Ghost Tiny"]],
-            "Hang out with friends": [43, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
+            "Stop at a cafe nearby to unwind for a little bit": [43, ["iPad Kid Tiny", "Ghost Tiny"]],
+            "Eat a tub of ice cream to relax": [43, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
             "Stay after school for sports/theater/etc.": [43, ["Professional Tiny", "Megamind Tiny"]]
         }
     },
@@ -150,10 +150,13 @@ const gameData = {
         }
     },
     "44": {
-        "text": "The sun beats down on you through the window of the math classroom, and thinking back to how your calculus teacher had a lowkey very monotone voice, you slowly start to drift asleep.",
+        "text": "The sun beats down on you through the window of the math classroom, and thinking back to how your calculus teacher had a lowkey very monotone voice, you slowly start to drift asleep. What do you dream about?",
         "image": "smaller_images/placeholder.png",
         "choices": {
-            "Continue": [13, ["iPad Kid Tiny", "Excited Tiny", "Ghost Tiny", "Tired Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny", "Professional Tiny", "Polite Tiny", "Megamind Tiny"]]
+            "The time that you overfed a goldfish and found it dead the next morning": [13, ["Shocked Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
+            "The time you stole a calculator from your mom to do a math problem": [13, ["iPad Kid Tiny", "Professional Tiny", "Megamind Tiny"]],
+            "The time meringue landed on your head and your dear friend got it all on video": [13, ["Ghost Tiny", "Tired Tiny"]],
+            "The time you threw away your textbook before your final": [13, ["Excited Tiny", "Polite Tiny"]]
         }
     },
     "12": {
@@ -256,17 +259,17 @@ const gameData = {
         }
     },
     "51": {
-        "text": "You've got to try to relax, today has been stressful and you're on edge. You decide to pick a song to listen to to set the mood for your shower. What song are you picking",
+        "text": "You've got to try to get your energy up, today has been stressful and you're on edge. You decide to pick a song to listen to to set the mood for your shower. What song are you picking",
         "image": "smaller_images/music.png",
         "choices": {
-            "Lovesick by Laufey": [23, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny", "Polite Tiny"]],
-            "Mystery of Love by Sufjan Stevens": [23, ["Professional Tiny", "Megamind Tiny", "iPad Kid Tiny"]],
-            "Hide and Seek by Imogen Heap": [23, ["I've Lost It Tiny"]],
-            "Sky Full of Song by Florence + the Machine": [23, ["Excited Tiny", "Shocked Tiny"]]
+            "Fire by BTS": [23, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny", "Polite Tiny"]],
+            "Deja Vu by TXT": [23, ["Professional Tiny", "Megamind Tiny", "iPad Kid Tiny"]],
+            "Drama by Aespa": [23, ["I've Lost It Tiny"]],
+            "Mr. Vampire by ITZY": [23, ["Excited Tiny", "Shocked Tiny"]]
         }
     },
     "23": {
-        "text": "You're in the middle of taking your shower when all of a sudden, the water turns scalding hot! What do you do?",
+        "text": "You're in the middle of taking your shower when all of a sudden, the water turns scalding hot and turning the handle doesn't help! What do you do?",
         "image": "smaller_images/shower_hot.png",
         "choices": {
             "Yell and call for help in case anyone's passing by the house": [24, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
@@ -278,9 +281,9 @@ const gameData = {
         "text": "You call for help, and thankfully, you left the window open. Someone biking past the house rushes in to help you by turning off the water supply to the house. What do you repay them with?",
         "image": "smaller_images/money.png",
         "choices": {
-            "An embroidery piece that you had in your backpack!": [27, ["Tired Tiny", "Side Eye Tiny", "I've Lost It Tiny"]],
+            "An embroidery piece that you had in your backpack": [27, ["Tired Tiny", "Side Eye Tiny", "I've Lost It Tiny"]],
             "The birthday card you got from random day with your buds": [27, ["Excited Tiny", "Polite Tiny", "Megamind Tiny"]],
-            "A video from when you danced to Fantastic Babye": [27, ["iPad Kid Tiny", "Professional Tiny"]],
+            "A video from when you danced to Fantastic Baby": [27, ["iPad Kid Tiny", "Professional Tiny"]],
             "Two rows of a tank top you started knitting but gave up on": [27, ["Ghost Tiny", "Shocked Tiny"]]
         }
     },
@@ -288,14 +291,14 @@ const gameData = {
         "text": "You jump out of the shower, but the hot water becomes so hot that it sets off the fire alarm. The firemen come in to save you! What do you repay them with?",
         "image": "smaller_images/firemen.png",
         "choices": {
-            "An embroidery piece that you had in your backpack!": [27, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
+            "An embroidery piece that you had in your backpack": [27, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
             "The birthday card you got from random day with your buds": [27, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
             "A video from when you danced to Fantastic Baby": [27, ["iPad Kid Tiny", "Ghost Tiny"]],
             "Two rows of a tank top you started knitting but gave up on": [27, ["Tired Tiny", "Side Eye Tiny"]]
         }
     },
     "26": {
-        "text": "You stay in the shower, but since you broke the handle, it just gets hotter and hotter until you cannot take it anymore. You jump out of the shower - now what do you do?",
+        "text": "You stay in the shower, but it just gets hotter and hotter until you cannot take it anymore. You jump out of the shower - now what do you do?",
         "image": "smaller_images/hot_water.png",
         "choices": {
             "Have empathy for my friend who was in a very similar situation": [27, ["Excited Tiny", "Professional Tiny", "I've Lost It Tiny"]],
