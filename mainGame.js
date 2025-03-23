@@ -558,7 +558,7 @@ function revealMostSelectedCreature() {
         storyImage.style.display = 'none';
         choicesContainer.style.display = 'none';
     
-        text.textContent = "Drumroll... here is your Tiny ID!";
+        text.textContent = "Drumroll... here is your Tiny ID! Happy April Fools! Oh how I love this holiday :D";
         text.appendChild(img);
 
         // Remove the share button code completely
