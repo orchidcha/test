@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Landmark Are You?</title>
     <style>
         @font-face {
             font-family: 'PixelFont';
             src: url('Pixelify_Sans/pixel_font.ttf') format('truetype');
+            font-display: swap;
         }
 
         body, html {
@@ -13,132 +17,163 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'PixelFont', sans-serif;
-            background: #2a0944; /* Darker swamp green background */
+            font-family: 'PixelFont', Arial, sans-serif;
+            background: #2a0944;
         }
 
         .container {
-            width: 100vw; /* full viewport width */
-            height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
-            max-height: 150vh; /* full viewport height */
-            max-width: calc(100vh * (9 / 16));
-            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            min-height: 80vh;
+            padding: 15px;
             border-radius: 10px;
-            background: #3f0d63; /* Swamp green color */
+            background: #3f0d63;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
             text-align: center;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            /* overflow-y: auto;   */
+            justify-content: flex-start;
+            margin: 0 auto;
+            overflow-y: auto;
         }
 
         .title {
-            font-size: 21px;
-            margin-bottom: 3vh;
-            color: #e2c6ff; /* Light green text */
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #e2c6ff;
         }
 
         .start-button {
-            font-size: 21px;
-            padding: 1vh 2vw;
-            /* border: 2px solid #fcf0c0; */
-            background-color: #8a33c6; /* Mossy green */
-            color: #f9f0ff; /* Light text for contrast */
+            font-size: 18px;
+            padding: 12px 24px;
+            background-color: #8a33c6;
+            color: #f9f0ff;
             cursor: pointer;
             text-decoration: none;
-            margin-bottom: 3vh;
+            margin: 15px auto;
+            display: inline-block;
+            border-radius: 5px;
         }
 
         .start-button:hover {
-            background-color: #6a209e; /* Darker on hover */
-            color: #f9f0ff
+            background-color: #6a209e;
+            color: #f9f0ff;
         }
 
         .game-container {
             display: none;
-            margin-top: 10%;
+            width: 100%;
             overflow: auto;
         }
  
         .choices {
-        
-        display: flex;
-        flex-direction: column; /* Arrange buttons in a column */
-        align-items: center; /* Center the buttons horizontally */
-        gap: 10px; /* Space between the buttons */
-        margin-top: 2rem; /* Space above the choices container */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
         }
 
         .choice-button {
-            font-family: 'PixelFont', sans-serif;
-            font-size: 18px; /* Adjust font size to be smaller */
-            padding: 1vh 1vw; /* Adjust padding based on viewport height and width */
-            border: 0.5px solid #5d2989; /* Darker border */
-            background-color: #7d3bab; /* Swamp green button */
-            color: #f0e2ff; /* Light text for contrast */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-            width: 80%; /* Make buttons wider */
-            text-align: left; /* Align text to the left */
+            font-family: 'PixelFont', Arial, sans-serif;
+            font-size: 16px;
+            padding: 12px 15px;
+            border: 0.5px solid #5d2989;
+            background-color: #7d3bab;
+            color: #f0e2ff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            text-align: left;
+            border-radius: 5px;
         }
 
         @media (hover: hover) {
             .choice-button:hover {
-                background-color: #5d2989; /* Slightly darker background on hover */
+                background-color: #5d2989;
             }
         }
-        .choice-button:focus {
-            background-color: #5d2989; /* Slightly darker background on focus */
+        
+        .choice-button:focus, .choice-button:active {
+            background-color: #5d2989;
         }
+        
         .story-text {
-            font-size: 20px;
-            margin-bottom: 1rem; /* Space above the choices container */
-            color: #e2c6ff; /* Light green text */
-        /* padding-bottom: 5rem; */
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e2c6ff;
+            line-height: 1.4;
         }
 
         .image-container {
-            max-width: 70%; /* Set max width of image container */
-            margin: 0 auto; /* Center the image horizontally */
+            max-width: 80%;
+            margin: 10px auto;
         }
 
         .image-container img {
-            width: 100%; /* Make the image fill its container */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove any extra space */
-            max-width: 100%; /* Ensure image does not exceed its container */
-            border: 2px solid #8a33c6; /* Green border around images */
-            border-radius: 10px; /* Rounded corners for images */
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+            border: 2px solid #8a33c6;
+            border-radius: 10px;
         }
 
         .responsive-image {
             max-width: 100%;
             height: auto;
         }
+        
+        #homescreen {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 15px auto;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                min-height: 85vh;
+                padding: 12px;
+            }
+            
+            .title {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+            
+            .choice-button {
+                font-size: 15px;
+                padding: 10px 12px;
+            }
+            
+            .story-text {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="title">What landmark are you?</div> 
-        <img id="homescreen" style="padding-bottom: 15px" src="smaller_images/landmark_opening.png" alt="Swamp Home Image"/>
+        <img id="homescreen" src="smaller_images/landmark_opening.png" alt="Landmark Home Image"/>
         <a href="#" class="start-button" onclick="startGame()">Enter the world</a>
         
         <div class="game-container" id="game-container">
-            <div class ="story-text" id="story-text"></div>
+            <div class="story-text" id="story-text"></div>
             <div class="image-container">
-                <img id="story-image" src="smaller_images/landmark_opening.png" alt="Swamp Scene"/>
+                <img id="story-image" src="smaller_images/landmark_opening.png" alt="Landmark Scene"/>
             </div>
             <div class="choices" id="choices"></div>
         </div>
-
     </div>
     
     <script src="mainGame.js"></script>
     
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-
 </body> 
 </html>
