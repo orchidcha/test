@@ -144,7 +144,7 @@ const gameData = {
         "image": "smaller_images/macaron.png",
         "choices": {
             "When it helped me measure the perfect amount of egg whites to add into meringue so a little bit would plop onto my head": [44, ["iPad Kid Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
-            "When it helped me calculate the mini golf scores so I could lie and say I beat someone else": [44, ["Professional Tiny", "Excited Tiny", "Shocked Tiny"]],
+            "when it helped me calculate the mini golf scores so I could lie and say I beat someone else": [44, ["Professional Tiny", "Excited Tiny", "Shocked Tiny"]],
             "That lovely time when I took Bayesian statistics in New Zealand": [44, ["Megamind Tiny", "Ghost Tiny"]],
             "The time it helped me stay on beat while I danced to Fantastic Baby": [44, ["Polite Tiny", "Tired Tiny"]]
         }
@@ -416,9 +416,9 @@ const gameData = {
         "image": "smaller_images/sandcastles.png",
         "choices": {
             "Having a little picnic with drinks and pastries": [34, ["Ghost Tiny", "Tired Tiny", "Professional Tiny"]],
-            "Building sandcastles": [34, ["iPad Kid Tiny", "Excited Tiny", "Polite Tiny"]],
-            "Swimming": [36, ["Shocked Tiny", "I've Lost It Tiny", "Megamind Tiny"]],
-            "Surfing": [36, ["Side Eye Tiny"]]
+            "Building enormous sandcastles": [34, ["iPad Kid Tiny", "Excited Tiny", "Polite Tiny"]],
+            "Swimming with all of the fishes and creatures you see": [36, ["Shocked Tiny", "I've Lost It Tiny", "Megamind Tiny"]],
+            "You've never tried surfing before, but now's the perfect time to try!": [36, ["Side Eye Tiny"]]
         }
     },
     "34": {
@@ -455,6 +455,86 @@ const gameData = {
         }
     }
 };
+
+// Add this to the top of your mainGame.js file, after the gameData declaration
+
+// Preload all images
+function preloadImages() {
+    // Create an object to store all the image paths from gameData
+    const imagePaths = new Set();
+    
+    // Extract all image paths from gameData
+    for (const state in gameData) {
+        if (gameData[state].image) {
+            imagePaths.add(gameData[state].image);
+        }
+    }
+    
+    // Add the opening image
+    imagePaths.add("smaller_images/landmark_opening.png");
+    
+    // Preload each image
+    imagePaths.forEach(path => {
+        const img = new Image();
+        img.src = path;
+    });
+}
+
+// Call this function when the page loads
+window.addEventListener('load', preloadImages);
+
+// Modify the renderState function to handle image loading better
+function renderState(state) {
+    console.log("Rendering state:", state);
+    
+    const storyText = document.getElementById('story-text');
+    const storyImage = document.getElementById('story-image');
+    const choicesContainer = document.getElementById('choices');
+    
+    // Create a loading state
+    storyText.textContent = gameData[state].text;
+    choicesContainer.innerHTML = ''; // Clear previous choices
+    
+    // Create a promise for the image loading
+    const loadImage = new Promise((resolve) => {
+        if (gameData[state].image) {
+            const img = new Image();
+            img.onload = () => {
+                storyImage.src = img.src;
+                resolve();
+            };
+            img.onerror = () => {
+                console.warn("Failed to load image:", gameData[state].image);
+                storyImage.src = "smaller_images/placeholder.png";
+                resolve();
+            };
+            img.src = gameData[state].image;
+        } else {
+            storyImage.src = "smaller_images/placeholder.png";
+            resolve();
+        }
+    });
+    
+    // Create buttons after image is loaded
+    loadImage.then(() => {
+        // Now create all the buttons
+        for (const [choice, info] of Object.entries(gameData[state].choices)) {
+            const button = document.createElement('button');
+            button.textContent = choice;
+            button.className = 'choice-button';
+            let nextState = info[0];
+            let selectedPersonalities = info[1];
+            
+            button.onclick = function() {
+                console.log("Clicked to go to state", nextState);
+                changeState(nextState, selectedPersonalities);
+            };
+            
+            choicesContainer.appendChild(button);
+        }
+    });
+}
+
 
 const personalities = { 
     "iPad Kid Tiny": 0,      // The Enthusiast
@@ -558,7 +638,7 @@ function revealMostSelectedCreature() {
         storyImage.style.display = 'none';
         choicesContainer.style.display = 'none';
     
-        text.textContent = "Drumroll... here is your Tiny ID! Happy April Fools! Oh how I love this holiday :D";
+        text.textContent = "Drumroll... here is your Tiny ID!";
         text.appendChild(img);
 
         // Remove the share button code completely
