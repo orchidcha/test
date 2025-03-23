@@ -416,9 +416,9 @@ const gameData = {
         "image": "smaller_images/sandcastles.png",
         "choices": {
             "Having a little picnic with drinks and pastries": [34, ["Ghost Tiny", "Tired Tiny", "Professional Tiny"]],
-            "Building enormous sandcastles": [34, ["iPad Kid Tiny", "Excited Tiny", "Polite Tiny"]],
-            "Swimming with all of the fishes and creatures you see": [36, ["Shocked Tiny", "I've Lost It Tiny", "Megamind Tiny"]],
-            "You've never tried surfing before, but now's the perfect time to try!": [36, ["Side Eye Tiny"]]
+            "Building sandcastles": [34, ["iPad Kid Tiny", "Excited Tiny", "Polite Tiny"]],
+            "Swimming": [36, ["Shocked Tiny", "I've Lost It Tiny", "Megamind Tiny"]],
+            "Surfing": [36, ["Side Eye Tiny"]]
         }
     },
     "34": {
