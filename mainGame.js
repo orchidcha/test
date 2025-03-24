@@ -33,10 +33,10 @@ const gameData = {
         "text": "Better yet, you have the option to bring a buddy to help you explore the town! Who are you bringing?",
         "image": "smaller_images/friends.png",
         "choices": {
-            "Liza, my best friend": [7, ["Excited Tiny", "Polite Tiny", "iPad Kid Tiny"]],
+            "Lizzy, my best friend": [7, ["Excited Tiny", "Polite Tiny", "iPad Kid Tiny"]],
             "Siggy, my partner": [7, ["Professional Tiny", "Megamind Tiny", "Shocked Tiny"]],
             "Ozzy, my brother": [7, ["Ghost Tiny", "I've Lost It Tiny"]],
-            "Pippa, my sister": [7, ["Tired Tiny", "Side Eye Tiny"]],
+            "Pippy, my sister": [7, ["Tired Tiny", "Side Eye Tiny"]],
         }
     },
     "7": {
@@ -234,7 +234,7 @@ const gameData = {
         }
     },
     "20": {
-        "text": "The uneasy feeling lingers. Nothing about this place sits right. Where even are you??",
+        "text": "The uneasy feeling lingers. Nothing about this sits right. Where even are you??",
         "image": "smaller_images/uneasy.png",
         "choices": {
             "You've got to move. Whatever this is, you need to understand it": [21, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny", "I've Lost It Tiny", "Professional Tiny", "Megamind Tiny"]],
@@ -332,49 +332,49 @@ const gameData = {
         "image": "smaller_images/glacier_land.png",
         "choices": {
             "Go looking for penguins": [28, ["Professional Tiny", "Megamind Tiny", "I've Lost It Tiny"]],
-            "I see an ice skating rink!": [28, ["Excited Tiny", "Shocked Tiny"]],
-            "Immediately taking shelter, this was much colder than I expected": [28, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
-            "Throwing a snowball or two at some of the little kids nearby": [28, ["iPad Kid Tiny", "Polite Tiny"]]
+            "Pet the huskies": [28, ["Excited Tiny", "Shocked Tiny"]],
+            "Go ice-caving": [28, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
+            "Hike around the glacier": [28, ["iPad Kid Tiny", "Polite Tiny"]]
         }
     },
     "28": {
-        "text": "You see the ice skaters as you walk around and explore. What are you thinking",
+        "text": "Afterwards, you head over to the ice rink to do some spins, and a crowd forms to watch! Who's your favorite figure skater?",
         "image": "smaller_images/ice_rink.png",
         "choices": {
-            "They don't know the first thing they're doing": [45, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny"]],
-            "They look like they would be great teachers!": [45, ["Polite Tiny", "Professional Tiny", "Megamind Tiny"]],
-            "How do they do all those spins??": [45, ["Ghost Tiny", "I've Lost It Tiny"]],
-            "I would pay money to see one of them fall": [45, ["Tired Tiny", "Side Eye Tiny"]]
+            "Michelle Kwan": [45, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny"]],
+            "Yuzuru Hanyu": [45, ["Polite Tiny", "Professional Tiny", "Megamind Tiny"]],
+            "Yuna Kim": [45, ["Ghost Tiny", "I've Lost It Tiny"]],
+            "Tessa Virtue and Scott Moir": [45, ["Tired Tiny", "Side Eye Tiny"]]
         }
     },
     "45": {
-        "text": "A small child hits you with a snowball - rude! What do you do in response?",
+        "text": "While you're skating, a small child trips you! You face-plant and chip a tooth - what do you do next?",
         "image": "smaller_images/snowball.png",
         "choices": {
-            "Run away scared - children are frightening!": [29, ["Ghost Tiny", "Tired Tiny"]],
-            "Tell their parent that their child is misbehaving - that'll show them": [29, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "Pelt them back! Don't dish it if you can't take it": [29, ["iPad Kid Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
-            "Laugh it off - they're just kids": [29, ["Excited Tiny", "Shocked Tiny"]]
+            "Skate away scared - children are frightening!": [29, ["Ghost Tiny", "Tired Tiny"]],
+            "Tell their parent that they have a brat on their hands": [29, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
+            "Trip them back! Don't dish it if you can't take it": [29, ["iPad Kid Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
+            "Ignore it - it's just a tooth": [29, ["Excited Tiny", "Shocked Tiny"]]
         }
     },
     "29": {
-        "text": "As you walk around, you see a little ice cave that you can go in. What are you thinking",
+        "text": "As you walk around, you see a fresh patch of snow! What do you do with it?",
         "image": "smaller_images/ice_cave.png",
         "choices": {
-            "You couldn't pay me to go in there - what if it collapses?!?": [30, ["Tired Tiny", "Side Eye Tiny"]],
-            "I wonder what creatures are in there": [30, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "If I see a penguin in there and no one else knows it's in there ,can I keep it as a pet?": [30, ["iPad Kid Tiny", "Ghost Tiny", "I've Lost It Tiny"]],
-            "I would love to explore the cave!": [30, ["Excited Tiny", "Shocked Tiny"]]
+            "Make a snow angel": [30, ["Tired Tiny", "Side Eye Tiny"]],
+            "Make a snowball and throw it at the kid who tripped you": [30, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
+            "Make some snow ducks": [30, ["iPad Kid Tiny", "Ghost Tiny", "I've Lost It Tiny"]],
+            "Build a snowman": [30, ["Excited Tiny", "Shocked Tiny"]]
         }
     },
     "30": {
         "text": "You head over to the bar by the touristy area of the glacier. What drink are you getting?",
         "image": "smaller_images/bar.png",
         "choices": {
-            "A tangerine whiskey sour": [46, ["Excited Tiny", "Shocked Tiny"]],
-            "A warm tea": [46, ["Ghost Tiny", "Tired Tiny", "Polite Tiny"]],
-            "A manhattan": [46, ["Professional Tiny", "Megamind Tiny", "I've Lost It Tiny"]],
-            "A hot chocolate": [46, ["iPad Kid Tiny", "Side Eye Tiny"]]
+            "A negroni": [46, ["Excited Tiny", "Shocked Tiny"]],
+            "A gin & tonic": [46, ["Ghost Tiny", "Tired Tiny", "Polite Tiny"]],
+            "A hot chocolate - it's cold!": [46, ["Professional Tiny", "Megamind Tiny", "I've Lost It Tiny"]],
+            "A Tom Collins": [46, ["iPad Kid Tiny", "Side Eye Tiny"]]
         }
     },
     "46": {
@@ -409,52 +409,56 @@ const gameData = {
         "image": "smaller_images/beach.png",
         "choices": {
             "A good pair of sunglasses": [33, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "A relaxing book": [33, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
+            "A beach towel": [33, ["Ghost Tiny", "Tired Tiny", "Side Eye Tiny"]],
             "A swimsuit": [33, ["iPad Kid Tiny", "Excited Tiny"]],
             "An underwater camera": [33, ["Shocked Tiny", "I've Lost It Tiny"]]
         }
     },
     "33": {
-        "text": "All around you are families seemingly having the best time. You have so many activities you could do! What are you doing first?",
+        "text": "You prop yourself up on the sand ready to enjoy a good book. What book are you reading?",
         "image": "smaller_images/sandcastles.png",
-        "choices": {
-            "Having a little picnic with drinks and pastries": [34, ["Ghost Tiny", "Tired Tiny", "Professional Tiny"]],
-            "Building enormous sandcastles": [34, ["iPad Kid Tiny", "Excited Tiny", "Polite Tiny"]],
-            "Swimming with all of the fishes and creatures you see": [36, ["Shocked Tiny", "I've Lost It Tiny", "Megamind Tiny"]],
-            "You've never tried surfing before, but now's the perfect time to try!": [36, ["Side Eye Tiny"]]
+        "choices":{
+            "Intermezzo by Sally Rooney": [34, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
+            "The Secret History by Donna Tartt": [34, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
+            "The Women by Kristin Hannah": [34, ["iPad Kid Tiny", "Ghost Tiny"]],
+            "When Breath Becomes Air by Paul Kalanithi": [34, ["Tired Tiny", "Side Eye Tiny"]]
         }
     },
     "34": {
-        "text": "As you sit on the warm sand, you notice that you seem to be slowly sinking and getting deeper and deeper into the earth. What do you do?",
-        "image": "smaller_images/sinkhole.png",
+        "text": "You decide to head into the ocean. What's your first activity once you get into the water?",
+        "image": "smaller_images/ocean.png",
         "choices": {
-            "Get up and try to run to stable ground": [37, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny"]],
-            "Call out for help, hoping someone will pull you up": [37, ["Ghost Tiny", "Tired Tiny", "Professional Tiny", "Megamind Tiny", "Polite Tiny"]]
+            "Snorkel and see the fish": [36, ["Tired Tiny", "Megamind Tiny", "Excited Tiny"]],
+            "Float and look at the sky": [36, ["Polite Tiny", "Ghost Tiny", "I've Lost It Tiny"]],
+            "Splash those around me with water": [36, ["iPad Kid Tiny", "Shocked Tiny"]],
+            "Try to surf and catch a wave": [36, ["Professional Tiny", "Side Eye Tiny"]]
         }
     },
     "36": {
-        "text": "You're chest deep in the water when you see a mysterious looking object deep into the ocean. It's getting closer and closer the longer you look! What do you do?",
+        "text": "Wow, isn't the water great? Which is your favorite body of water?",
         "image": "smaller_images/ocean.png",
         "choices": {
-            "Call for help, hoping someone hears you": [37, ["Ghost Tiny", "Tired Tiny", "Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "Turn and swim back to the beach as fast as you can": [37, ["iPad Kid Tiny", "Excited Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny"]]
+            "The Pacific Ocean": [36, ["Professional Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
+            "The Tasman Sea": [36, ["Tired Tiny", "Shocked Tiny", "Megamind Tiny"]],
+            "The Mediterranean Sea": [36, ["iPad Kid Tiny", "Ghost Tiny"]],
+            "The Atlantic Ocean": [36, ["Excited Tiny", "Polite Tiny"]]
         }
     },
     "37": {
-        "text": "To no avail, you continue to struggle, but the forces around you refuse to let go. For a moment, everything feels weightless. Until you drop, and drop, and drop.",
+        "text": "You can't help but think about water bending when you're in an ocean like this. What type of bender would you want to be?",
         "image": "smaller_images/placeholder.png",
         "choices": {
-            "Continue": [38, ["iPad Kid Tiny", "Excited Tiny", "Ghost Tiny", "Tired Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny", "Professional Tiny", "Polite Tiny", "Megamind Tiny"]],
+            "A waterbender": [20, ["Ghost Tiny", "Megamind Tiny", "Shocked Tiny"]],
+            "An air bender": [20, ["iPad Kid Tiny", "Professional Tiny", "Tired Tiny"]],
+            "An earth bender ": [20, ["Excited Tiny", "Polite Tiny", "I've Lost It Tiny"]],
+            "A fire bender": [20, ["Side Eye Tiny"]]
         }
     },
     "38": {
-        "text": "The falling sensation doesn't stop. Your stomach lurches, your breath catches - then, impact. As you take your first step, the feeling lingers. What do you do?",
+        "text": "You're chest deep in the water when you see a wave headed towards you. It's a centimeter in front of your face before it engulfs you, lifting you far into the air. And then you fall, fall, fall, bracing yourself for impact.",
         "image": "smaller_images/falling.png",
         "choices": {
-            "Stand up carefully and try to get your bearings": [20, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "Reach out to see what surrounds you": [20, ["iPad Kid Tiny", "Ghost Tiny", "Tired Tiny"]],
-            "Call out to see if anyone answers ": [20, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
-            "Stay completely still. ": [20, ["Side Eye Tiny"]]
+            "Continue": [20, ["iPad Kid Tiny", "Excited Tiny", "Ghost Tiny", "Tired Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny", "Professional Tiny", "Polite Tiny", "Megamind Tiny"]]
         }
     }
 };
