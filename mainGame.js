@@ -151,7 +151,7 @@ const gameData = {
     },
     "44": {
         "text": "The sun beats down on you through the window of the math classroom, and thinking back to how your calculus teacher had a lowkey very monotone voice, you slowly start to drift asleep. What do you dream about?",
-        "image": "smaller_images/placeholder.png",
+        "image": "smaller_images/dream.png",
         "choices": {
             "The time that you overfed a goldfish and found it dead the next morning": [13, ["Shocked Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
             "The time you stole a calculator from your mom to do a math problem": [13, ["iPad Kid Tiny", "Professional Tiny", "Megamind Tiny"]],
@@ -160,10 +160,13 @@ const gameData = {
         }
     },
     "12": {
-        "text": "You sit down at one of the lab stools, and the soft humming sends you off into a sleep.",
-        "image": "smaller_images/placeholder.png",
+        "text": "You sit down at one of the lab stools, and the soft humming sends you off into a sleep. What do you dream about?",
+        "image": "smaller_images/dream.png",
         "choices": {
-            "Continue": [13, ["iPad Kid Tiny", "Excited Tiny", "Ghost Tiny", "Tired Tiny", "Shocked Tiny", "Side Eye Tiny", "I've Lost It Tiny", "Professional Tiny", "Polite Tiny", "Megamind Tiny"]]
+            "The time that you overfed a goldfish and found it dead the next morning": [13, ["Shocked Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
+            "The time you stole a calculator from your mom to do a math problem": [13, ["iPad Kid Tiny", "Professional Tiny", "Megamind Tiny"]],
+            "The time meringue landed on your head and your dear friend got it all on video": [13, ["Ghost Tiny", "Tired Tiny"]],
+            "The time you threw away your textbook before your final": [13, ["Excited Tiny", "Polite Tiny"]]
         }
     },
     "4": {
@@ -199,10 +202,10 @@ const gameData = {
         "text": "After going through the zoo, you decide to head to a cafe in the park. What do you ask the barista?",
         "image": "smaller_images/cafe.png",
         "choices": {
-            "Ask them if they have lattes": [18, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
-            "Order a hot chocolate": [18, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
-            "Ask if they have a pot of earl grey tea": [18, ["iPad Kid Tiny", "Ghost Tiny"]],
-            "Take a quick power nap": [18, ["Tired Tiny", "Side Eye Tiny"]]
+            "Ask them if they have lattes": [50, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
+            "Order a hot chocolate": [50, ["Excited Tiny", "Shocked Tiny", "I've Lost It Tiny"]],
+            "Ask if they have a pot of earl grey tea": [50, ["iPad Kid Tiny", "Ghost Tiny"]],
+            "Take a quick power nap": [50, ["Tired Tiny", "Side Eye Tiny"]]
         }
     },
     "50": {
@@ -309,7 +312,7 @@ const gameData = {
     },
     "27": {
         "text": "Today has been exhausting. You lie down on the bed and fall asleep. What do you dream about?",
-        "image": "smaller_images/goldfish.png",
+        "image": "smaller_images/dream.png",
         "choices": {
             "The time that you overfed a goldfish and found it dead the next morning": [13, ["Shocked Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
             "The time you stole a calculator from your mom to do a math problem": [13, ["iPad Kid Tiny", "Professional Tiny", "Megamind Tiny"]],
@@ -318,12 +321,12 @@ const gameData = {
         }
     },
     "13": {
-        "text": "You wake up, rested the next morning after an unbelievably hectic day. Luckily, no one's evicted you from this unknown house yet. You manage your way to the airport - where are you going?",
+        "text": "You wake up, rested the next morning after an unbelievably hectic day. You manage your way to the airport - where are you going?",
         "image": "smaller_images/last_choice.png",
         "choices": {
             "Back home!": [0, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
             "As far away from here as you can": [0, ["Tired Tiny", "Side Eye Tiny"]],
-            "Is going back into space an option?": [0, ["iPad Kid Tiny", "Ghost Tiny", "I've Lost It Tiny"]],
+            "I hate you :D is going back to space an option :D": [0, ["iPad Kid Tiny", "Ghost Tiny", "I've Lost It Tiny"]],
             "You think you'll hang around this town for a bit - who knows what else there is to explore!": [0, ["Excited Tiny", "Shocked Tiny"]]
         }
     },
@@ -349,7 +352,7 @@ const gameData = {
     },
     "45": {
         "text": "While you're skating, a small child trips you! You face-plant and chip a tooth - what do you do next?",
-        "image": "smaller_images/snowball.png",
+        "image": "smaller_images/chipped_tooth.png",
         "choices": {
             "Skate away scared - children are frightening!": [29, ["Ghost Tiny", "Tired Tiny"]],
             "Tell their parent that they have a brat on their hands": [29, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
@@ -359,7 +362,7 @@ const gameData = {
     },
     "29": {
         "text": "As you walk around, you see a fresh patch of snow! What do you do with it?",
-        "image": "smaller_images/ice_cave.png",
+        "image": "smaller_images/snowman.png",
         "choices": {
             "Make a snow angel": [30, ["Tired Tiny", "Side Eye Tiny"]],
             "Make a snowball and throw it at the kid who tripped you": [30, ["Professional Tiny", "Megamind Tiny", "Polite Tiny"]],
@@ -436,22 +439,22 @@ const gameData = {
     },
     "36": {
         "text": "Wow, isn't the water great? Which is your favorite body of water?",
-        "image": "smaller_images/ocean.png",
+        "image": "smaller_images/type_ocean.png",
         "choices": {
-            "The Pacific Ocean": [36, ["Professional Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
-            "The Tasman Sea": [36, ["Tired Tiny", "Shocked Tiny", "Megamind Tiny"]],
-            "The Mediterranean Sea": [36, ["iPad Kid Tiny", "Ghost Tiny"]],
-            "The Atlantic Ocean": [36, ["Excited Tiny", "Polite Tiny"]]
+            "The Pacific Ocean": [37, ["Professional Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
+            "The Tasman Sea": [37, ["Tired Tiny", "Shocked Tiny", "Megamind Tiny"]],
+            "The Mediterranean Sea": [37, ["iPad Kid Tiny", "Ghost Tiny"]],
+            "The Atlantic Ocean": [37, ["Excited Tiny", "Polite Tiny"]]
         }
     },
     "37": {
         "text": "You can't help but think about water bending when you're in an ocean like this. What type of bender would you want to be?",
-        "image": "smaller_images/placeholder.png",
+        "image": "smaller_images/waterbending.png",
         "choices": {
-            "A waterbender": [20, ["Ghost Tiny", "Megamind Tiny", "Shocked Tiny"]],
-            "An air bender": [20, ["iPad Kid Tiny", "Professional Tiny", "Tired Tiny"]],
-            "An earth bender ": [20, ["Excited Tiny", "Polite Tiny", "I've Lost It Tiny"]],
-            "A fire bender": [20, ["Side Eye Tiny"]]
+            "A waterbender": [38, ["Ghost Tiny", "Megamind Tiny", "Shocked Tiny"]],
+            "An air bender": [38, ["iPad Kid Tiny", "Professional Tiny", "Tired Tiny"]],
+            "An earth bender ": [38, ["Excited Tiny", "Polite Tiny", "I've Lost It Tiny"]],
+            "A fire bender": [38, ["Side Eye Tiny"]]
         }
     },
     "38": {
