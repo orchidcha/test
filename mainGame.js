@@ -144,7 +144,7 @@ const gameData = {
         "image": "smaller_images/macaron.png",
         "choices": {
             "When it helped me measure the perfect amount of egg whites to add into meringue so a little bit would plop onto my head": [44, ["iPad Kid Tiny", "I've Lost It Tiny", "Side Eye Tiny"]],
-            "when it helped me calculate the mini golf scores so I could lie and say I beat someone else": [44, ["Professional Tiny", "Excited Tiny", "Shocked Tiny"]],
+            "When it helped me calculate the mini golf scores so I could lie and say I beat someone else": [44, ["Professional Tiny", "Excited Tiny", "Shocked Tiny"]],
             "That lovely time when I took Bayesian statistics in New Zealand": [44, ["Megamind Tiny", "Ghost Tiny"]],
             "The time it helped me stay on beat while I danced to Fantastic Baby": [44, ["Polite Tiny", "Tired Tiny"]]
         }
