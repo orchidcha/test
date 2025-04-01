@@ -463,7 +463,7 @@ const gameData = {
         "text": "You can't help but think about water bending when you're in an ocean like this. What type of bender would you want to be?",
         "image": "smaller_images/waterbending.png",
         "choices": {
-            "A waterbender": [38, ["Ghost Tiny", "Megamind Tiny", "Shocked Tiny"]],
+            "A water bender": [38, ["Ghost Tiny", "Megamind Tiny", "Shocked Tiny"]],
             "An air bender": [38, ["iPad Kid Tiny", "Professional Tiny", "Tired Tiny"]],
             "An earth bender ": [38, ["Excited Tiny", "Polite Tiny", "I've Lost It Tiny"]],
             "A fire bender": [38, ["Side Eye Tiny"]]
