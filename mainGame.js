@@ -43,12 +43,24 @@ const gameData = {
         "text": "You sit down to people watch for a little bit. So many interesting characters in this town! Who are you most fascinated by?",
         "image": "smaller_images/dogs.png",
         "choices": {
-            "The dance team performing on the street!": [8, ["Excited Tiny", "iPad Kid Tiny", "Shocked Tiny"]],
-            "The artist painting caricatures": [8, ["Megamind Tiny", "Professional Tiny", "Polite Tiny"]],
-            "The woman sewing by the river": [8, ["Tired Tiny", "Ghost Tiny"]],
-            "The dogs playing in the park": [8, ["I've Lost It Tiny", "Side Eye Tiny"]],
+            "The dance team performing on the street!": [14, ["Excited Tiny", "iPad Kid Tiny", "Shocked Tiny"]],
+            "The artist painting caricatures": [14, ["Megamind Tiny", "Professional Tiny", "Polite Tiny"]],
+            "The woman sewing by the river": [14, ["Tired Tiny", "Ghost Tiny"]],
+            "The dogs playing in the park": [14, ["I've Lost It Tiny", "Side Eye Tiny"]],
         }
     },
+
+    "14": {
+        "text": "As you walk around the town, you see a club fair for the town's local college! Which club is the most enticing to you?",
+        "image": "smaller_images/clubs.png",
+        "choices": {
+            "The wine tasting club": [8, ["Megamind Tiny", "Polite Tiny"]],
+            "The acapella group": [8, ["Excited Tiny", "Ghost Tiny", "Shocked Tiny"]],
+            "The student investment club": [8, ["Professional Tiny", "Tired Tiny", "Side Eye Tiny"]],
+            "The Asian dance troupe": [8, ["iPad Kid Tiny", "I've Lost It Tiny"]],
+        }
+    },
+
     "8": {
         "text": "All of a sudden, you hear a noise beyond the town's borders, closer to the woods past the river, but it seems like no one else can hear it. What do you do?",
         "image": "smaller_images/woods.png",
